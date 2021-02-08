@@ -1,0 +1,10 @@
+
+/node_modules
+# /.pnp
+
+/web-client/coverage
+
+/web-client/build
+
+/web-client/node_modules
+/web-client/.pnp
