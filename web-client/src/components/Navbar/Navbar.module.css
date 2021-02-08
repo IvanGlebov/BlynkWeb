@@ -1,0 +1,38 @@
+.navbarClass {
+    grid-area: n;
+    padding: 20px;
+}
+
+.links {
+    width: inherit;
+    margin-top: 20px;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: rgba(225, 235, 245, .7);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    width: inherit;
+}
+
+.link {
+    width: inherit;
+    transition: 0.3s;
+}
+
+.link:hover {
+    border-radius: 20px;
+    background-color: #1C2636;
+    transition: 0.3s;
+}
+
+.linkActive {
+    border-radius: 20px;
+    background-color: #1C2636;
+    transition: 0.3s;
+}
+
+
