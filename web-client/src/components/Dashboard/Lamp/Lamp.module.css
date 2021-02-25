@@ -1,0 +1,111 @@
+.contentHolder {
+    display: grid;
+    grid-gap: 20px;
+}
+
+.onOffButton {
+    margin-left: 20px;
+    /*padding-left: ;*/
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    border: 0 solid #FFFFFF;
+    transition: 0.5s;
+}
+
+.onOffButton:hover{
+    background-color: #00B7FF;
+    transition: 0.3s;
+}
+
+.itemName {
+    padding-left: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.name {
+
+}
+
+.status {
+    /*text-align: right;*/
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 3px;
+}
+
+.settings {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 290px;
+    border: 1px solid #FFFFFF;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.usingTimer {
+    /*padding-left: 10px;*/
+    margin-left: 10px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+}
+
+.checkBoxTex {
+    padding-top: 3px;
+}
+
+.checkBox {
+    width: 20px;
+    height: 20px;
+    transition: 0.5s;
+}
+
+.offIfAway {
+    margin-left: 10px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+}
+
+.content {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+.routes {
+    padding-top: 10px;
+    padding-left: 10px;
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+    grid-gap: 20px;
+}
+
+.checkboxes {
+
+}
+
+.timeInputs {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.timePicker {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    /*color: ;*/
+    width: 150px;
+    height: 30px;
+    background-color: #131c29;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    color: rgba(225, 235, 245, .9);
+}
+.timePickerDescription {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+

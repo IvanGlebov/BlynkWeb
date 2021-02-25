@@ -6,11 +6,12 @@ class Navbar extends React.Component {
     render () {
         return(
             <div className={s.navbarClass}>
-                <div className={s.nameLogo}>BLYNK CONTROL</div>
+                <div className={s.nameLogo}>
+                    BLYNK CONTROL
+                </div>
                 <div className={s.links}>
-                    <div className={s.link}>
-                        <NavLink to='/dashboard' activeClass={s.linkActive}>DASHBOARD</NavLink>
-                    </div>
+                        <NavLink className={s.link} to='/dashboard' activeClassName={s.linkActive}>DASHBOARD</NavLink>
+                        <NavLink className={s.link} to='/settings' activeClassName={s.linkActive}>Settings</NavLink>
                 </div>
             </div>
         )

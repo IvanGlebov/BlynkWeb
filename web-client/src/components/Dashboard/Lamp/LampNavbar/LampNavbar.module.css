@@ -1,0 +1,41 @@
+.link {
+    width: inherit;
+    transition: 0.3s;
+    line-height: 25px;
+}
+
+.link:hover {
+    border-radius: 20px;
+    background-color: #1C2636;
+    transition: 0.3s;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    /*text-align: center;*/
+    color: rgba(225, 235, 245, .7);
+    padding: 10px 15px;
+    width: inherit;
+}
+
+.links {
+    padding-right: 10px;
+    display: grid;
+    grid-row-gap: 5px;
+    grid-template-rows: 1fr 1fr;
+
+}
+
+.linkActive {
+    border-radius: 20px;
+    background-color: #1C2636;
+    transition: 0.3s;
+}
+
+.container {
+    height: inherit;
+    border-right-width: 2px;
+    border-right-style: solid;
+    border-image: linear-gradient(to bottom, transparent, rgba(225, 235, 245, .9), transparent) 1 1%;
+}

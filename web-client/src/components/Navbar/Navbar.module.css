@@ -4,6 +4,9 @@
 }
 
 .links {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-row-gap: 5px;
     width: inherit;
     margin-top: 20px;
 }
@@ -11,6 +14,7 @@
 a {
     display: inline-block;
     text-decoration: none;
+    /*text-align: center;*/
     color: rgba(225, 235, 245, .7);
     padding-top: 10px;
     padding-bottom: 10px;
@@ -21,6 +25,7 @@ a {
 .link {
     width: inherit;
     transition: 0.3s;
+    line-height: 25px;
 }
 
 .link:hover {
