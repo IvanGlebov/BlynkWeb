@@ -1,3 +1,9 @@
 # BlynkWeb
 
-Это проект сайта написанный на React, Redux, Express, NodeJS для взаимодействия с сервером умного дома Blynk, который находится в локальной сети на Raspberry Pi 3B+
+Project created for managing and using my smart home devices. 
+
+Smart devices connects to my Blynk server located on Raspberry Pi 3B+. As I own public IP-address, I can host this site anywhere and still control devices.
+
+## Web interface image
+<img src="/gitSrc/Dashboard_img.png" width="500px">
+
