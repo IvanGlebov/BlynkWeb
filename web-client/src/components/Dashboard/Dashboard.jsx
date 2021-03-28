@@ -12,6 +12,8 @@ class Dashboard extends React.Component {
                     <div className={s.component}><LampContainer/></div>
                     <div className={s.component}>Bedroom component</div>
                     <div className={s.component}>Server status</div>
+                    <div className={s.component}>New block</div>
+                    <div className={s.component}>Add new +</div>
                 </div>
 
             </div>

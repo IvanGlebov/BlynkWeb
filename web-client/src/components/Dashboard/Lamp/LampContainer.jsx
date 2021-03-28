@@ -1,12 +1,13 @@
 import {connect} from "react-redux";
 import Lamp from "./Lamp";
-import {
-    changeIfAwayProp,
-    changeLampState,
-    changeTimeOnProp,
-    turnOff,
-    turnOn
-} from "../../../redux/reducers/lampReducer";
+import {turnLampOff, turnLampOn} from "../../../redux/reducers/lampReducer";
+// import {
+    // changeIfAwayProp,
+    // changeLampState,
+    // changeTimeOnProp,
+    // turnOff,
+    // turnOn
+// } from "../../../redux/reducers/lampReducer";
 
 const mapStateToProps = (state) => {
     return {
@@ -19,22 +20,24 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        turnOn: () => {
-            dispatch(turnOn())
-        },
-        turnOff: () => {
-            dispatch(turnOff())
-        },
-        changeTimeOnProp: (e) => {
-            dispatch(changeTimeOnProp(e.target.checked))
-        },
-        changeIfAwayProp: (e) => {
-            dispatch(changeIfAwayProp(e.target.checked))
-        },
-        changeLampState: (value) => {
-            dispatch(changeLampState(value))
-        }
+        // turnOn: () => {
+        //     dispatch(turnOn())
+        // },
+        // turnOff: () => {
+        //     dispatch(turnOff())
+        // },
+        // changeLampState: (value) => {
+        //     dispatch(changeLampState(value))
+        // }
 
+        turnLampOn: () => {
+            dispatch(turnLampOn())
+            // alert("Turn ON")
+        },
+        turnLampOff: () => {
+            dispatch(turnLampOff())
+            // alert("Turn OFF")
+        }
     }
 }
 

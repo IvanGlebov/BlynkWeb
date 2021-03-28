@@ -8,6 +8,7 @@ class LampNavbar extends React.Component {
         return (
             <div className={s.container}>
                 <div className={s.links}>
+                    {/*<NavLink to='/dashboard' className={s.link} activeClassName={s.linkActive}>Main</NavLink>*/}
                     <NavLink to='/dashboard/onOffTime' className={s.link} activeClassName={s.linkActive}>On/Off on
                         time</NavLink>
                     <NavLink to='/dashboard/onOffIfAway' className={s.link} activeClassName={s.linkActive}>On/Off if

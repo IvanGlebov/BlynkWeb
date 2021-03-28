@@ -1,0 +1,66 @@
+.contentWrapper {
+    /*border: 1px solid white;*/
+}
+
+.text {
+    padding-top: 10px;
+    /*padding-left: 10px;*/
+}
+
+.useTimeWrapper{
+    /*padding-top: 10px;*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.sliderWrapper{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+
+input:checked + .roundSlider {
+    background-color: #255FB0;
+}
+
+input:checked + .roundSlider:before{
+    transform: translateX(26px);
+}
+
+.timeInputWrapper {
+    padding-top: 15px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.timePicker {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'HelveticaW Neue', sans-serif;
+    /*color: ;*/
+    /*width: 150px;*/
+    height: 30px;
+    background-color: #131c29;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    color: rgba(225, 235, 245, .9);
+}
+.timePicker:focus {
+    outline: none;
+}
+
+
+input[type="time"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+.timeInputHeader {
+    padding-top: 15px;
+    font-size: 15px;
+}
+
+.TimeOffSwitchWrapper {
+    /*margin-left: 20px;*/
+    text-align: right;
+    margin-right: 10px;
+}
