@@ -12,21 +12,40 @@ let initialState = {
 }
 
 const lampReducer = (state = initialState, action) => {
-    switch (action.type){
+
+    let testMode = true
+    switch (action.type) {
         case LAMP_TO_ON:
-            axios
-                .get('https://serverblynk.iota02.keenetic.link/fsnNWpuUjlr8F-KfCGLgMPM3-xytL3Q7/update/v1?value=1')
-                // .then((response) => console.log(response.status))
+            // let blynkResponse
+            if (testMode) {
+                axios
+                    .get('https://serverblynk.iota02.keenetic.link/fsnNWpuUjlr8F-KfCGLgMPM3-xytL3Q7/update/v4?value=1')
+                    .then((response) => {
+                        return {...state, lampState: true}
+                    })
+            } else {
+                axios
+                    .get('https://serverblynk.iota02.keenetic.link/fsnNWpuUjlr8F-KfCGLgMPM3-xytL3Q7/update/v1?value=1')
+                    .then((response) => {
+                        return {...state, lampState: true}
+                    })
+            }
             return {...state, lampState: true}
-
         case LAMP_TO_OFF:
-
-            axios
-                .get('https://serverblynk.iota02.keenetic.link/fsnNWpuUjlr8F-KfCGLgMPM3-xytL3Q7/update/v1?value=0')
-                // .then((response) => console.log(response.status))
-
+            if (testMode) {
+                axios
+                    .get('https://serverblynk.iota02.keenetic.link/fsnNWpuUjlr8F-KfCGLgMPM3-xytL3Q7/update/v4?value=0')
+                    .then((response) => {
+                        return {...state, lampState: true}
+                    })
+            } else {
+                axios
+                    .get('https://serverblynk.iota02.keenetic.link/fsnNWpuUjlr8F-KfCGLgMPM3-xytL3Q7/update/v1?value=0')
+                    .then((response) => {
+                        return {...state, lampState: true}
+                    })
+            }
             return {...state, lampState: false}
-
         default:
             return state
     }

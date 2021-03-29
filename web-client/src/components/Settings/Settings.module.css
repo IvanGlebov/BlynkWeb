@@ -1,0 +1,47 @@
+.contentWrapper {
+    min-height: 900px;
+}
+
+.mainHeader {
+    color: rgba(225, 235, 245, 0.7);
+    font-size: 20px;
+}
+
+.optionsWrapper {
+    background-color: #24344d;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+
+.commonOptions {
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-image: linear-gradient(to bottom, transparent, rgba(224, 235, 245, .9), transparent) 1 1%;
+    /*padding-right: -20px;*/
+    margin-right: 30px;
+}
+
+.developerOptions {
+    /*margin-left: 20px;*/
+}
+/*border-image: linear-gradient(to bottom, transparent, rgba(225, 235, 245, .9), transparent) 1 1%;*/
+.options {
+    margin-top: 30px;
+}
+
+.option {
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.optionText {
+    padding-top: 7px;
+}
+
+.controlElement {
+    text-align: center;
+}
