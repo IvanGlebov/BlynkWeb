@@ -1,19 +1,22 @@
 import {connect} from "react-redux";
 import Settings from "./Settings";
-import {changeNoserverMode, changeUseV4insteadV1} from "../../redux/reducers/settingsReducer";
+import {changeNoserverMode} from "../../redux/reducers/settingsReducer";
+import {switchUseV4} from "../../redux/reducers/lampReducer";
 
 const mapStateToProps = (state) => {
     return {
-        lampSetting: {
-            useV4insteadV1: state.settings.useV4insteadV1
-        }
+        // lampSetting: {
+        //     useV4: state.lamp.lampData.useV4
+        // }
+        useV4: state.lamp.lampData.useV4,
+        noServerMode: state.settings.noServerMode
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         changeV4toV1: () => {
-            dispatch(changeUseV4insteadV1())
+            dispatch(switchUseV4())
         },
         changeNoserverMode: () => {
             dispatch(changeNoserverMode())

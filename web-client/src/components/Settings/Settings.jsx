@@ -21,14 +21,14 @@ class Settings extends React.Component {
                             <div className={s.option}>
                                 <div className={s.optionText}>Use NoServer mode</div>
                                 <div className={s.controlElement}>
-                                    <DarkBlueMaterialSwitch onChange={this.props.changeNoserverMode} value={this.props.noServerMode ? "on" : "off"} />
+                                    <DarkBlueMaterialSwitch onChange={this.props.changeNoserverMode} checked={this.props.noServerMode} />
                                 </div>
 
                             </div>
                             <div className={s.option}>
                                 <div className={s.optionText}>Use pin V4 instead of V1</div>
                                 <div className={s.controlElement}>
-                                    <DarkBlueMaterialSwitch onChange={this.props.changeV4toV1} value={this.props.lampSetting.useV4insteadV1 ? "on" : "off"} />
+                                    <DarkBlueMaterialSwitch onChange={this.props.changeV4toV1} checked={this.props.useV4} />
                                 </div>
 
                             </div>

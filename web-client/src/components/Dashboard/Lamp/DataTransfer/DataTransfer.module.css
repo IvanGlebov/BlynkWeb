@@ -1,0 +1,16 @@
+.contentWrapper {
+    padding-top: 10px;
+}
+
+.option {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+}
+
+.optionHeader {
+
+}
+
+.optionPerformer {
+    text-align: right;
+}

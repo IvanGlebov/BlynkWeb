@@ -4,6 +4,7 @@ import LampNavbarContainer from "./LampNavbar/LampNavbarContainer";
 import {NavLink, Route} from "react-router-dom";
 import axios from "axios";
 import OnOffSettingsContainer from "./OnOffSetting/OnOffSettingContainer";
+import DataTransferContainer from "./DataTransfer/DataTransferContainer";
 
 class Lamp extends React.Component {
 
@@ -39,13 +40,14 @@ class Lamp extends React.Component {
             <div className={s.contentHolder}>
                 <div className={s.itemName}>
                     <NavLink to='/dashboard' className={s.name}>Main Lamp</NavLink>
-                    <div className={s.status}>Lamp is {this.status === false ? 'off' : 'on'}</div>
+                    <div className={s.status}>Lamp is {!this.props.lampState ? 'off' : 'on'}</div>
                 </div>
                 <div className={s.content}>
                     <LampNavbarContainer/>
                     <div className={s.routes}>
                         <Route path='/dashboard' render={() => <div className={s.settingsHeader}>SETTINGS</div>} />
                         <Route path='/dashboard/onOffTime' render={() => <OnOffSettingsContainer />} />
+                        <Route path='/dashboard/dataTransfer' render={() => <DataTransferContainer />} />
                     </div>
                 </div>
                 <div className={s.buttons}>

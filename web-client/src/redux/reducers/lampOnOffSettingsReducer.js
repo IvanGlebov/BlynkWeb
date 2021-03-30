@@ -11,9 +11,7 @@ let initialState = {
 const lampOnOffSettingsReducer = (state = initialState, action) => {
     switch (action.type){
         case SWITCH_STATE:
-            // debugger;
             console.log("Changing state to " + action.state.toString())
-
             return {...state, onOff: action.state}
         case SET_ON_TIME:
             return {...state, onTime: action.onTime}

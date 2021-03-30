@@ -13,7 +13,7 @@ class OnOffSettings extends React.Component{
                 <div className={s.useTimeWrapper}>
                     <div className={s.text}>Turn on/off using time</div>
                     <div className={s.TimeOffSwitchWrapper}>
-                        <DarkBlueMaterialSwitch />
+                        <DarkBlueMaterialSwitch checked={this.props.useMode} onChange={this.props.switchState} />
                     </div>
 
 
@@ -26,7 +26,7 @@ class OnOffSettings extends React.Component{
                     <div className={s.timeInputHeader}>Off time</div>
                     <input className={s.timePicker} type="time" />
                 </div>
-
+                {/*<div className={}></div>*/}
             </div>
 
         )

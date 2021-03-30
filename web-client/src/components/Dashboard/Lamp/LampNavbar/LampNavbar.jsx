@@ -13,6 +13,8 @@ class LampNavbar extends React.Component {
                         time</NavLink>
                     <NavLink to='/dashboard/onOffIfAway' className={s.link} activeClassName={s.linkActive}>On/Off if
                         away</NavLink>
+                    <NavLink to='/dashboard/dataTransfer' className={s.link} activeClassName={s.linkActive}>Data
+                        transfer</NavLink>
                 </div>
             </div>
         )
