@@ -20,11 +20,11 @@ class OnOffSettings extends React.Component{
                 </div>
                 <div className={s.timeInputWrapper}>
                     <div className={s.timeInputHeader}>On time</div>
-                    <input className={s.timePicker} type="time"/>
+                    <input className={s.timePicker} type="time" onChange={this.props.setOnTime.bind(this)} value={this.props.onTime} />
                 </div>
                 <div className={s.timeInputWrapper}>
                     <div className={s.timeInputHeader}>Off time</div>
-                    <input className={s.timePicker} type="time" />
+                    <input className={s.timePicker} type="time" onChange={this.props.setOffTime.bind(this)} value={this.props.offTime} />
                 </div>
                 {/*<div className={}></div>*/}
             </div>
