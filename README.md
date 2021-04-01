@@ -6,6 +6,18 @@ Smart devices connect to my Blynk server located on Raspberry Pi 3B+. As I own a
 
 If web-server is running, you can can got to the page at https://dashboard.iota02.keenetic.link/dashboard
 
+## Installing
+Before beginnin clone project by running this command
+```
+git clone https://github.com/IvanGlebov/BlynkWeb
+```
+Go to folder 'BlynkWeb' and run ```npm install```.
+
+Then go to the folder 'web-client' and run ```npm install``` again.
+
+To run Web server go to folder 'web-client' and run ```npm start```.
+
+
 ## Dashboard
 This is the main page in the application.
 
