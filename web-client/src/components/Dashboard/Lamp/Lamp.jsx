@@ -16,23 +16,15 @@ class Lamp extends React.Component {
     }
     componentDidMount() {
         this.firstOpen = false
-        // debugger;
         axios
             .get('https://serverblynk.iota02.keenetic.link/fsnNWpuUjlr8F-KfCGLgMPM3-xytL3Q7/get/v1')
             .then(response => {
-                if (response.data === 1){
-                    // this.props.turnOn()
-                    // this.props.changeLampState(1)
+                if (response.data[0] === '1'){
                     this.props.turnLampOn()
                 } else {
                     this.props.turnLampOff()
-                    // this.props.turnOff()
-                    // this.props.changeLampState(0)
                 }
-                // if (response.data)
-                // console.log(response.data)
             })
-        // debugger;
     }
 
     render() {
