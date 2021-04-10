@@ -50,14 +50,14 @@ class Settings extends React.Component {
 
                             <div
                                 className={this.props.developerSettings.showLampDeveloperSettings === true ? s.optionsUnfolded : s.optionsFolded}>
-                                <div className={s.option}>
-                                    <div className={s.optionText}>Use NoServer mode</div>
-                                    <div className={s.controlElement}>
-                                        <DarkBlueMaterialSwitch onChange={this.props.switchLampNoserverMode}
-                                                                checked={this.props.noServerMode}/>
-                                    </div>
+                                {/*<div className={s.option}>*/}
+                                {/*    <div className={s.optionText}>Use NoServer mode</div>*/}
+                                {/*    <div className={s.controlElement}>*/}
+                                {/*        <DarkBlueMaterialSwitch onChange={this.props.switchLampNoserverMode}*/}
+                                {/*                                checked={this.props.noServerMode}/>*/}
+                                {/*    </div>*/}
 
-                                </div>
+                                {/*</div>*/}
                                 <div className={s.option}>
                                     <div className={s.optionText}>Use pin V4 instead of V1</div>
                                     <div className={s.controlElement}>

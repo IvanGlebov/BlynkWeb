@@ -11,13 +11,11 @@ const SET_ON_TIME = "SET_ON_TIME"
 const SET_OFF_TIME = "SET_OFF_TIME"
 
 // const SWITCH_DEBUG = "SWITCH_DEBUG"
-const SWITCH_NO_SERVER_MODE = "SWITCH_NO_SERVER_MODE"
 const SWITCH_DEVELOPER_SHOW = "SWITCH_DEVELOPER_SHOW"
 
 const SWITCH_DEVELOPER_SHOW_LOADED = "SWITCH_DEVELOPER_SHOW_LOADED"
 const SET_DEVELOPER_SHOW = "SET_DEVELOPER_SHOW"
 let initialState = {
-    noServerMode: false,
     lampState: true,
     turnOnTime: false,
     offIfAway: true,
@@ -61,37 +59,29 @@ const lampReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case LAMP_TO_ON:
-            if (!state.noServerMode) {
-                if (state.lampData.useV4) {
-                    axios
-                        .get('https://serverblynk.iota02.keenetic.link/fsnNWpuUjlr8F-KfCGLgMPM3-xytL3Q7/update/v4?value=1')
-                        .then((response) => {
-                            return {...state, lampState: true}
-                        })
-                } else {
-                    axios
-                        .get('https://serverblynk.iota02.keenetic.link/fsnNWpuUjlr8F-KfCGLgMPM3-xytL3Q7/update/v1?value=1')
-                        .then((response) => {
-                            return {...state, lampState: true}
-                        })
-                }
+            if (state.lampData.useV4) {
+                axios
+                    .get('https://serverblynk.iota02.keenetic.link/fsnNWpuUjlr8F-KfCGLgMPM3-xytL3Q7/update/v4?value=1')
+                    .then((response) => {
+                    })
+            } else {
+                axios
+                    .get('https://serverblynk.iota02.keenetic.link/fsnNWpuUjlr8F-KfCGLgMPM3-xytL3Q7/update/v1?value=1')
+                    .then((response) => {
+                    })
             }
             return {...state, lampState: true}
         case LAMP_TO_OFF:
-            if (!state.noServerMode) {
-                if (state.lampData.useV4) {
-                    axios
-                        .get('https://serverblynk.iota02.keenetic.link/fsnNWpuUjlr8F-KfCGLgMPM3-xytL3Q7/update/v4?value=0')
-                        .then((response) => {
-                            return {...state, lampState: true}
-                        })
-                } else {
-                    axios
-                        .get('https://serverblynk.iota02.keenetic.link/fsnNWpuUjlr8F-KfCGLgMPM3-xytL3Q7/update/v1?value=0')
-                        .then((response) => {
-                            return {...state, lampState: true}
-                        })
-                }
+            if (state.lampData.useV4) {
+                axios
+                    .get('https://serverblynk.iota02.keenetic.link/fsnNWpuUjlr8F-KfCGLgMPM3-xytL3Q7/update/v4?value=0')
+                    .then((response) => {
+                    })
+            } else {
+                axios
+                    .get('https://serverblynk.iota02.keenetic.link/fsnNWpuUjlr8F-KfCGLgMPM3-xytL3Q7/update/v1?value=0')
+                    .then((response) => {
+                    })
             }
             return {...state, lampState: false}
         case SWITCH_USE_V4:
@@ -129,8 +119,6 @@ const lampReducer = (state = initialState, action) => {
                     offTime: action.value
                 }
             }
-        case SWITCH_NO_SERVER_MODE:
-            return {...state, noServerMode: !state.noServerMode}
         case SWITCH_DEVELOPER_SHOW:
             axios
                 .get(state.blynkSettings.serverIp
@@ -159,7 +147,7 @@ const lampReducer = (state = initialState, action) => {
                 // debugger
                 return {...state, showDeveloperSettings: false}
             }
-        // return
+
         default:
             // return {state, lampData: state.lampData}
             return state
@@ -176,7 +164,6 @@ export const switchOnOffTime = () => ({type: SWITCH_ON_OFF_TIME})
 export const setOnTime = (e) => ({type: SET_ON_TIME, value: e})
 export const setOffTime = (e) => ({type: SET_OFF_TIME, value: e})
 
-export const switchNoServerMode = () => ({type: SWITCH_NO_SERVER_MODE})
 export const switchDeveloperShow = () => ({type: SWITCH_DEVELOPER_SHOW})
 
 export const switchDeveloperShowLoaded = (e) => ({type: SWITCH_DEVELOPER_SHOW_LOADED, value: e})

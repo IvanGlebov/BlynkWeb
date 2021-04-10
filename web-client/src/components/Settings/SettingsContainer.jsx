@@ -5,7 +5,7 @@ import {
     setDeveloperShow,
     switchDeveloperShow,
     switchDeveloperShowLoaded,
-    switchNoServerMode,
+    // switchNoServerMode,
     switchUseV4
 } from "../../redux/reducers/lampReducer";
 
@@ -31,9 +31,9 @@ const mapDispatchToProps = (dispatch) => {
         changeV4toV1: () => {
             dispatch(switchUseV4())
         },
-        switchLampNoserverMode: () => {
-            dispatch(switchNoServerMode())
-        },
+        // switchLampNoserverMode: () => {
+        //     dispatch(switchNoServerMode())
+        // },
         switchLampDeveloperShow: () => {
             // debugger;
             dispatch(switchDeveloperShow())
