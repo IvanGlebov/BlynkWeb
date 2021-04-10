@@ -15,6 +15,9 @@ const SWITCH_DEVELOPER_SHOW = "SWITCH_DEVELOPER_SHOW"
 
 const SWITCH_DEVELOPER_SHOW_LOADED = "SWITCH_DEVELOPER_SHOW_LOADED"
 const SET_DEVELOPER_SHOW = "SET_DEVELOPER_SHOW"
+
+const SET_USE_V4 = "SET_USE_V4"
+
 let initialState = {
     lampState: true,
     turnOnTime: false,
@@ -35,7 +38,6 @@ let initialState = {
     },
     blynkSettings: {
         pins: {
-            noServerMode: "v100",
             useV4: "v101",
             lampState: "v1",
             onOffOnTime: "v102",
@@ -44,8 +46,6 @@ let initialState = {
         },
         serverIp: "https://serverblynk.iota02.keenetic.link/",
         lampKey: "fsnNWpuUjlr8F-KfCGLgMPM3-xytL3Q7",
-
-
     }
 
 
@@ -85,6 +85,14 @@ const lampReducer = (state = initialState, action) => {
             }
             return {...state, lampState: false}
         case SWITCH_USE_V4:
+            axios
+                .get(mainReqPart
+                    + "/update/"
+                    + state.blynkSettings.pins.useV4
+                    + "?value="
+                    + (state.lampData.useV4 === true ? "0" : "1")
+                )
+                .then()
             return {
                 ...state,
                 lampData: {
@@ -92,6 +100,16 @@ const lampReducer = (state = initialState, action) => {
                 }
             }
         case SWITCH_ON_OFF_TIME:
+            axios
+                .get(mainReqPart
+                    + "/update/"
+                    + state.blynkSettings.pins.onOffOnTime
+                    + "?value="
+                    + (state.onOffOnTime.useMode === true ? "0" : "1")
+                )
+                .then(response => {
+                    console.log(response)
+                })
             return {
                 ...state,
                 onOffOnTime: {
@@ -121,12 +139,12 @@ const lampReducer = (state = initialState, action) => {
             }
         case SWITCH_DEVELOPER_SHOW:
             axios
-                .get(state.blynkSettings.serverIp
-                    + state.blynkSettings.lampKey
+                .get(mainReqPart
                     + "/update/"
                     + state.blynkSettings.pins.lampSettings
                     + "?value="
-                    + (state.showDeveloperSettings === true ? "0" : "1"))
+                    + (state.showDeveloperSettings === true ? "0" : "1")
+                )
                 .then()
             return {...state, showDeveloperSettings: !state.showDeveloperSettings}
         case SWITCH_DEVELOPER_SHOW_LOADED:
@@ -147,7 +165,12 @@ const lampReducer = (state = initialState, action) => {
                 // debugger
                 return {...state, showDeveloperSettings: false}
             }
-
+        case SET_USE_V4:
+            if (action.value[0] === "1"){
+                return {...state, lampData: {useV4: true}}
+            } else {
+                return {...state, lampData: {useV4: false}}
+            }
         default:
             // return {state, lampData: state.lampData}
             return state
@@ -168,5 +191,7 @@ export const switchDeveloperShow = () => ({type: SWITCH_DEVELOPER_SHOW})
 
 export const switchDeveloperShowLoaded = (e) => ({type: SWITCH_DEVELOPER_SHOW_LOADED, value: e})
 export const setDeveloperShow = (e) => ({type: SET_DEVELOPER_SHOW, value: e})
+
+export const setUseV4 = (e) => ({type: SET_USE_V4, value: e})
 
 export default lampReducer

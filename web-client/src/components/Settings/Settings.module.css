@@ -68,7 +68,7 @@
 
 .optionsUnfolded {
     /*height: max-content;*/
-    height: 102px;
+    height: 62px;
     transition: 0.5s;
     opacity: 1;
     /*display: block;*/
@@ -81,4 +81,6 @@
     opacity: 0;
     height: 0;
     transition: 0.5s;
+    /*transform: translateY(-30px);*/
 }
+
