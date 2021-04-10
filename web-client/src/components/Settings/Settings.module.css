@@ -28,9 +28,7 @@
     /*margin-left: 20px;*/
 }
 /*border-image: linear-gradient(to bottom, transparent, rgba(225, 235, 245, .9), transparent) 1 1%;*/
-.options {
-    margin-top: 30px;
-}
+
 
 .option {
     padding-top: 10px;
@@ -44,4 +42,43 @@
 
 .controlElement {
     text-align: center;
+}
+
+.lampOptions {
+    border-radius: 30px;
+    background-color: #1C2636;
+    /*background-color: #24344d;*/
+    /*background-color: #131c29;*/
+    margin-top: 20px;
+    padding: 20px;
+}
+.subSectionHeader {
+    /*text-align: center;*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /*margin-right: 40px;*/
+    font-size: 18px;
+    font-style: italic;
+}
+
+.options {
+    /*margin-top: 30px;*/
+    transition: 0.5s;
+}
+
+.optionsUnfolded {
+    /*height: max-content;*/
+    height: 102px;
+    transition: 0.5s;
+    opacity: 1;
+    /*display: block;*/
+    transition-property: height, opacity;
+}
+
+.optionsFolded {
+    /*display: none;*/
+    transition-property: height, opacity;
+    opacity: 0;
+    height: 0;
+    transition: 0.5s;
 }
